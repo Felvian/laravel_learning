@@ -10,7 +10,7 @@ use App\Models\Tag;
 class DestroyController extends BaseController
 {
     public function __invoke(Post $post){
-        $this->authorize('destroy',$post);
+        $this->authorize('delete',$post);
         $post->delete();
         return redirect()->route('post.index');
     }
