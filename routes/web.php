@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/','App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/', [\App\Http\Controllers\MainController::class,'index'])->name('main.index');
 
 Route::group(['namespace' => 'App\Http\Controllers\Post'], function () {
     Route::get('/posts', 'IndexController')->name('post.index');
