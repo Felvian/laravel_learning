@@ -27,7 +27,7 @@ class CreatePostsTable extends Migration
             $table->index('category_id', 'post_category_idx');
             $table->foreign('category_id', 'post_category_fk')->on('categories')->references('id');
 
-            $table->unsignedInteger('id_user')->after('is_published');
+            $table->unsignedBigInteger('id_user')->nullable();
             $table->index('id_user', 'post_user_idx');
             $table->foreign('id_user', 'post_user_fk')->on('users')->references('id');
         });
