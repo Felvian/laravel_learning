@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [\App\Http\Controllers\MainController::class,'index'])->name('main.index');
+Route::get('/',function (){
+    return redirect('/main');
+});
 Route::post('posts/{post}/comment', [\App\Http\Controllers\CommentController::class,'store'])->name('comment.store');
 //Route::post('posts/{post}/comment', [\App\Http\Controllers\CommentController::class,'store'])->name('comment.store');
 
