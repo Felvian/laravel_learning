@@ -2,7 +2,7 @@
 @section('content')
     <div>
         <div>{{$post->id}}.{{ $post->title }}</div>
-        <div> {{$post->content}}</div>
+        <div> <pre>{!! $post->content !!}</pre></div>
 
     </div>
     @can('view', $post)
