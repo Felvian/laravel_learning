@@ -32,7 +32,7 @@ class PostController extends Controller
             'category_id' => 'integer',
             'tags' => '',
         ]);
-
+        dd($data);
         $tags = $data['tags'];
 
         unset($data['tags']);

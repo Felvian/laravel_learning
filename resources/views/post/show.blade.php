@@ -23,4 +23,26 @@
     <div>
         <a class="btn btn-primary mt-3" href="{{route('post.index')}}">Back</a>
     </div>
+
+    <div class="mt-5">
+        <h3>Комментарии</h3>
+    </div>
+    <form action="" method="post">
+        @csrf
+        <div class="form-group">
+            <label for="content">Your comment</label>
+            <textarea value="{{ old('content') }}" class="form-control" id="content" name="content" placeholder="Content"></textarea>
+            @error('content')
+            <p class="text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Create</button>
+    </form>
+    @foreach($post->comment as $comment)
+        <div>
+            <p>
+                {{$comment->comment}}
+            </p>
+        </div>
+    @endforeach
 @endsection

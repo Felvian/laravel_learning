@@ -34,6 +34,6 @@ Route::group([
 
 });
 
-Route::group(['namespace'=>'App\Http\Controllers\Post', 'middleware' => 'jwt.auth'],function(){
+/*Route::group(['namespace'=>'App\Http\Controllers\Post', 'middleware' => 'jwt.auth'],function(){
     Route::get('posts','IndexController');
-});
+});*/

@@ -13,7 +13,7 @@ class StoreController extends BaseController
         $data =$request->validated();
 
 
-
+        dd($request);
         $post=$this->service->store($data);
         //return new PostResource($post);
         return redirect()->route('post.index');
