@@ -27,6 +27,7 @@
     <div class="mt-5">
         <h3>Комментарии</h3>
     </div>
+    @auth()
     <form action="{{route('comment.store', $post->id)}}" method="post">
         @csrf
         <div class="form-group">
@@ -38,14 +39,17 @@
         </div>
         <button type="submit" class="btn btn-primary mt-2">Create</button>
     </form>
+    @endauth
     @foreach($comments as $comment)
-        <div class="card mt-2">
-            <div class="card-body mb-0 pb-0">
-                {{$comment->comment}}
+        @if($comment->id_post===$post->id)
+            <div class="card mt-2">
+                <div class="card-body mb-0 pb-0">
+                    {{$comment->comment}}
+                </div>
+                <div class="card-body mb-1 pt-0 pb-0">
+                    <p>Author: {{ $comment->user->name }} </p>
+                </div>
             </div>
-            <div class="card-body mb-1 pt-0 pb-0">
-                <p>Author: {{ $comment->user->name }} </p>
-            </div>
-        </div>
+        @endif
     @endforeach
 @endsection
