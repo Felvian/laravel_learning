@@ -13,11 +13,11 @@ class CommentController extends Controller
 {
     public function store(CommentRequest $request, Post $post){
         $data['comment'] = $request->content;
-        $data['user_id'] =  Auth::user()->id;
-        $data['post_id'] = $post->id;
+        $data['id_user'] =  Auth::user()->id;
+        $data['id_post'] = $post->id;
        // dd($this->authorize('view',$post));
         Comment::create($data);
-        return redirect()->route('post.show', $data['post_id']);
+        return redirect()->route('post.show', $data['id_post']);
 
     }
 }

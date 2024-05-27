@@ -38,11 +38,14 @@
         </div>
         <button type="submit" class="btn btn-primary mt-2">Create</button>
     </form>
-    @foreach($post->comment as $comment)
-        <div>
-            <p>
+    @foreach($comments as $comment)
+        <div class="card mt-2">
+            <div class="card-body mb-0 pb-0">
                 {{$comment->comment}}
-            </p>
+            </div>
+            <div class="card-body mb-1 pt-0 pb-0">
+                <p>Author: {{ $comment->user->name }} </p>
+            </div>
         </div>
     @endforeach
 @endsection
