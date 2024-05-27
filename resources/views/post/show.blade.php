@@ -27,7 +27,7 @@
     <div class="mt-5">
         <h3>Комментарии</h3>
     </div>
-    <form action="" method="post">
+    <form action="{{route('comment.store', $post->id)}}" method="post">
         @csrf
         <div class="form-group">
             <label for="content">Your comment</label>

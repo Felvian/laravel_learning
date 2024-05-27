@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [\App\Http\Controllers\MainController::class,'index'])->name('main.index');
+Route::post('posts/{post}/comment', [\App\Http\Controllers\CommentController::class,'store'])->name('comment.store');
+//Route::post('posts/{post}/comment', [\App\Http\Controllers\CommentController::class,'store'])->name('comment.store');
+
 
 Route::group(['namespace' => 'App\Http\Controllers\Post'], function () {
     Route::get('/posts', 'IndexController')->name('post.index');
